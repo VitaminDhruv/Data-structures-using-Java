@@ -65,7 +65,7 @@ public class Factorial {
 		//System.out.println("Factorial of 5: "+findFactorial(5));
 		fibbonacci(5);
 		int[] arr= {1,2,3,4,5,6};
-		System.out.println("  this is what "+get(arr,3));
+		//System.out.println("  this is what "+get(arr,3));
 		    }
 
 }
