@@ -138,8 +138,84 @@ public class BinaryTreeLL {
 			}
 			return currentNode;
 			}
+	//Deleting a tree
+		
+	public void delTree() {
+		rootNode=null;
+		System.out.println("The tree has been deleted!");
+	}
+
+
+	//Preorder traversal of the givenTree
+		
+	public void preOrderTraversal(Node node) {
+		if(node==null) {
+			return;
 		}
-//Delete the deepest node
+		else {
+			System.out.println(node.getValue());
+			preOrderTraversal(node.getLeft());
+			preOrderTraversal(node.getRight());
+		}
+	}
+	
+	//Ineorder traversal of the tree
+	public void inOrderTraversal(Node node) {
+		if(node==null) {
+			return;
+		}
+		else {
+			inOrderTraversal(node.getLeft());
+			System.out.println(node.getValue());
+			inOrderTraversal(node.getRight());
+		}
+		
+	} 
+	
+	//post order traversal
+	public void postOrderTraversal(Node node) {
+		if(node==null) {
+			return;
+		}
+		else {
+			postOrderTraversal(node.getLeft());
+			postOrderTraversal(node.getRight());
+			System.out.println(node.getValue());
+		}
+	}
+	
+	//Level Order Traversal
+	
+	public void levelOrderTravesal()
+	{
+		Queue<Node> queue=new LinkedList<Node>();
+		queue.add(rootNode);
+		
+		while(!queue.isEmpty()) {
+			Node currentNode=queue.remove();
+			System.out.println(currentNode.getValue());
+			
+			if(currentNode.getLeft()!=null) {
+				queue.add(currentNode.getLeft());
+			}
+			if(currentNode.getRight()!=null) {
+				queue.add(currentNode.getRight());
+			}
+			
+		}
+			
+		
+			
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
 
 	
 	
@@ -147,4 +223,4 @@ public class BinaryTreeLL {
 	
 	
 	
-
+}
